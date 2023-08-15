@@ -1,0 +1,175 @@
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	background-color: #f7f7f7;
+	padding: 20px 20px;
+	z-index: 20;
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.header-nav-wrap {
+	display: flex;
+	right: 0;
+	align-items: center;
+	gap: 10px;
+}
+
+@media (max-width: 767px) {
+	.header-nav-wrap {
+		display: none;
+	}
+}
+
+.header-mobile-container {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.header-mobile-container {
+		display: block;
+	}
+}
+
+.menu-btn{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 24px;
+  right:10px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+ 
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+
+.menu-btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu-btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+#menu-toggle{
+	display: none;
+}
+
+#menu-toggle:checked ~ .menu-btn > span{
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before{
+  top: 0;
+  transform: rotate(0);
+}
+#menu-toggle:checked ~ .menu-btn > span::after{
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.title {
+  margin: 50px 0 50px;
+}
+
+.product-list {
+	gap: 20px;
+}
+
+.card {
+	max-width: 310px;
+	padding: 0;
+}
+
+@media (max-width: 767px) {
+	.card {
+		max-width: 100%;
+	}
+}
+
+.card-img_size {
+	height: 170px;
+	object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+	.card-img_size {
+		height: 140px;
+	}
+}
+
+@media (max-width: 765px) {
+	.card-img_size {
+		height: auto;
+		max-height: 400px;
+	}
+}
+
+.card-body_flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-text {
+	flex: 1 1 auto;
+}
+
+.product-info {
+	display: flex;
+	justify-content: space-between;
+	background-color: #f7f7f7;
+	padding: 16px 10px 26px;
+	border-top: #b1aaaa solid 1px;
+}
+
+.btn-size {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.offcanvas.offcanvas-start {
+	top: 93px;
+	width: 50%;
+}
+
+.offcanvas {
+	width: 80%;
+}
+
+.offcanvas-backdrop {
+	z-index: 10;
+}
+
+.cart-img {
+	width: 60px;
+}
+
+.cart-item {
+	display: flex;
+	justify-content: space-around;
+	margin: 20px 0;
+	border: 1px solid ;
+	
+}
+
