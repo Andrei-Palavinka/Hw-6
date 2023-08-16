@@ -132,16 +132,22 @@ const renderCart = () => {
     const cartItem = document.createElement("div");
     cartItem.classList.add("cart-item");
     cartItem.innerHTML = `
-        <img class="cart-img" src="${product.thumbnail}" alt="${product.title}">
-        <h5 class="cart-title">${product.title}</h5>
-        <div  class="btn btn-secondary plus"  data-product-id="${product.id}" >+</div>
-      
-        <div class="cart-item-price">Price: $${product.price} X ${product.counter} </div>
-        <button ${
-          product.counter === 1 ? "disabled" : ""
-        } class="btn btn-secondary minus"  data-product-id="${product.id}">-</button>
-				<button  data-product-id="${product.id}"  class="delete-item-cart btn btn-danger">Delete</button>
-      
+				<div class= "cart-item-left">
+					<img class="cart-img" src="${product.thumbnail}" alt="${product.title}">
+					<h5 class="cart-title">${product.title}</h5>
+				</div>
+        
+				<div class= "cart-item-right">
+					<div class= "cart-quantity-control">
+						<button ${product.counter === 1 ? "disabled" : ""} class="btn btn-secondary minus"  data-product-id="${product.id}">-</button>
+
+						<div class="cart-item-price">${product.price}$ X ${product.counter} </div>
+
+						<button  class="btn btn-secondary plus"  data-product-id="${product.id}" >+</button>
+					</div>
+			
+					<button  data-product-id="${product.id}"  class="delete-item-cart btn btn-danger">Remove from order</button>
+				</div>
     `;
     cartElement.appendChild(cartItem);
   });
